@@ -13,7 +13,7 @@ import plotly.express as px
 
 # header written in markdown
 st.write("""
-# Advertising Campaign Prediction App
+# Advertising Prediction App
 - Predicting the total sales based on an adverstising campaign
 """)
 
@@ -80,11 +80,6 @@ else:
 # predict on the input data
 loaded_poly = pickle.load(open('final_poly_converter.pkl', 'rb'))
 loaded_model = pickle.load(open('sales_poly_model.pkl', 'rb'))
-
-# if file uploaded, show user the data
-if uploaded_file is not None:
-    st.write(campaign)
-
 
 # transform input data
 campaign_poly = loaded_poly.transform(campaign)
