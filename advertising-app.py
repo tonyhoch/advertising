@@ -29,10 +29,10 @@ st.write(advert_df)
 
 # Draw correlation data
 st.write("## Correlations")
+st.write(advert_df.corr()['sales'].drop('sales'))
 
 # Draw figures
 st.write("## Training Data Graphs")
-st.write(advert_df.corr()['sales'].drop('sales'))
 fig,axes = plt.subplots(nrows=1,ncols=3,figsize=(16,6))
 
 axes[0].plot(advert_df['TV'],advert_df['sales'],'o')
@@ -81,10 +81,9 @@ else:
 loaded_poly = pickle.load(open('final_poly_converter.pkl', 'rb'))
 loaded_model = pickle.load(open('sales_poly_model.pkl', 'rb'))
 
+# if file uploaded, show user the data
 if uploaded_file is not None:
     st.write(campaign)
-else:
-    st.write('Awaiting CSV file to be uploaded. Currently using example input parameters (shown below).')
 
 
 # transform input data
