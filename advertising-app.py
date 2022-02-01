@@ -50,9 +50,14 @@ st.pyplot(plt)
 
 
 # PLOTLY CHART
-fig = px.scatter(advert_df, x="TV", y="sales", color="radio")
+fig = px.scatter(advert_df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend")
 st.plotly_chart(fig)
 
+fig = px.scatter(advert_df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend")
+st.plotly_chart(fig)
+
+fig = px.scatter(advert_df, x="TV", y="radio", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend")
+st.plotly_chart(fig)
 
 
 # create sidebar
