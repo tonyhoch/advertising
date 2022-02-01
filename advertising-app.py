@@ -56,7 +56,7 @@ st.plotly_chart(fig)
 fig = px.scatter(advert_df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend")
 st.plotly_chart(fig)
 
-fig = px.scatter(advert_df, x="TV", y="radio", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend")
+fig = px.scatter(advert_df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend")
 st.plotly_chart(fig)
 
 
