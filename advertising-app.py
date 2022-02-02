@@ -52,15 +52,17 @@ axes[2].set_title("Newspaper Spend")
 axes[2].set_ylabel("Sales")
 st.pyplot(plt)
 
+df = advert_df[(advert_df['TV'] >= tv_slider[0] & advert_df['TV'] <= tv_slider[1]) & (advert_df['radio'] >= radio_slider[0] & advert_df['radio'] <= radio_slider[1]) & (advert_df['newspaper'] >= newspaper_slider[0] & advert_df['newspaper'] <= newspaper_slider[1])]
+
 
 # PLOTLY CHART
-fig = px.scatter(advert_df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend")
+fig = px.scatter(df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend")
 st.plotly_chart(fig)
 
-fig = px.scatter(advert_df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend")
+fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend")
 st.plotly_chart(fig)
 
-fig = px.scatter(advert_df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend")
+fig = px.scatter(df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend")
 st.plotly_chart(fig)
 
 
