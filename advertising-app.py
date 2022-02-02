@@ -57,13 +57,13 @@ df = advert_df[(advert_df['TV'] >= tv_slider[0]) & (advert_df['TV'] <= tv_slider
 
 
 # PLOTLY CHART
-fig = px.scatter(df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend", hover_data=["newspaper'])
+fig = px.scatter(df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend", hover_data=["newspaper"])
 st.plotly_chart(fig)
 
-fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend", hover_data=["newspaper'])
+fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend", hover_data=["newspaper"])
 st.plotly_chart(fig)
 
-fig = px.scatter(df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend", hover_data=["newspaper'])
+fig = px.scatter(df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend", hover_data=["newspaper"])
 st.plotly_chart(fig)
 
 
