@@ -52,7 +52,7 @@ axes[2].set_title("Newspaper Spend")
 axes[2].set_ylabel("Sales")
 st.pyplot(plt)
 
-df = advert_df[(advert_df['TV'] >= tv_slider[0] & advert_df['TV'] <= tv_slider[1]) & (advert_df['radio'] >= radio_slider[0] & advert_df['radio'] <= radio_slider[1]) & (advert_df['newspaper'] >= newspaper_slider[0] & advert_df['newspaper'] <= newspaper_slider[1])]
+df = advert_df[(advert_df['TV'] >= tv_slider[0]) & (advert_df['TV'] <= tv_slider[1]) & (advert_df['radio'] >= radio_slider[0]) & (advert_df['radio'] <= radio_slider[1]) & (advert_df['newspaper'] >= newspaper_slider[0]) & (advert_df['newspaper'] <= newspaper_slider[1])]
 
 
 # PLOTLY CHART
