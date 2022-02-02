@@ -33,6 +33,7 @@ st.write(advert_df.corr()['sales'].drop('sales'))
 
 # Draw figures
 st.write("## Training Data Graphs")
+st.write(" - Move the sliders to adjust data shown in the training graphs")
 tv_slider = st.slider("TV Spend", value=[0,400])
 radio_slider = st.slider("Radio Spend", value=[0,100])
 newspaper_slider = st.slider("Newspaper Spend", value=[0,150])
@@ -56,13 +57,13 @@ df = advert_df[(advert_df['TV'] >= tv_slider[0]) & (advert_df['TV'] <= tv_slider
 
 
 # PLOTLY CHART
-fig = px.scatter(df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend")
+fig = px.scatter(df, x="TV", y="sales", color="radio", title="Sales vs. TV w/ Radio Spend", hover_data=["newspaper'])
 st.plotly_chart(fig)
 
-fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend")
+fig = px.scatter(df, x="TV", y="sales", color="newspaper", title="Sales vs. TV w/ Newspaper Spend", hover_data=["newspaper'])
 st.plotly_chart(fig)
 
-fig = px.scatter(df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend")
+fig = px.scatter(df, x="radio", y="sales", color="newspaper", title="Sales vs. Radio w/ Newspaper Spend", hover_data=["newspaper'])
 st.plotly_chart(fig)
 
 
