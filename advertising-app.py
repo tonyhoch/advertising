@@ -33,11 +33,9 @@ st.write(advert_df.corr()['sales'].drop('sales'))
 
 # Draw figures
 st.write("## Training Data Graphs")
-st.write(" - Move the sliders to adjust data shown in the training graphs")
-tv_slider = st.slider("TV Spend", value=[0,400])
-radio_slider = st.slider("Radio Spend", value=[0,100])
-newspaper_slider = st.slider("Newspaper Spend", value=[0,150])
 
+# All training datadata
+st.write(" - All Training Data Points")
 fig,axes = plt.subplots(nrows=1,ncols=3,figsize=(16,6))
 
 axes[0].plot(advert_df['TV'],advert_df['sales'],'o')
@@ -53,6 +51,12 @@ axes[2].set_title("Newspaper Spend")
 axes[2].set_ylabel("Sales")
 st.pyplot(plt)
 
+st.write(" - Move the sliders to adjust data shown in the training graphs below")
+tv_slider = st.slider("TV Spend", value=[0,400])
+radio_slider = st.slider("Radio Spend", value=[0,100])
+newspaper_slider = st.slider("Newspaper Spend", value=[0,150])
+
+# Filter dataset to fit sliders
 df = advert_df[(advert_df['TV'] >= tv_slider[0]) & (advert_df['TV'] <= tv_slider[1]) & (advert_df['radio'] >= radio_slider[0]) & (advert_df['radio'] <= radio_slider[1]) & (advert_df['newspaper'] >= newspaper_slider[0]) & (advert_df['newspaper'] <= newspaper_slider[1])]
 
 
