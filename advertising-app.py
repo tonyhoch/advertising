@@ -33,9 +33,9 @@ st.write(advert_df.corr()['sales'].drop('sales'))
 
 # Draw figures
 st.write("## Training Data Graphs")
-tv_slider = st.slider("TV Spend", value=[0,500])
-radio_slider = st.slider("Radio Spend", value=[0,500])
-newspaper_slider = st.slider("Newspaper Spend", value=[0,500])
+tv_slider = st.slider("TV Spend", value=[0,400])
+radio_slider = st.slider("Radio Spend", value=[0,100])
+newspaper_slider = st.slider("Newspaper Spend", value=[0,150])
 
 fig,axes = plt.subplots(nrows=1,ncols=3,figsize=(16,6))
 
